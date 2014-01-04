@@ -12,7 +12,7 @@ test("test set and get", function() {
     // Проверяем полученный статус
     ok(status === true, "Оно шевелится!");
 });
-test("test set and get", function() {
+test("test next step", function() {
     // Пытаемся зародить жизнь
     this.game.setCell(0, 0);
     // Переходим на следующий шаг
