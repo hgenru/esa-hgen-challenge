@@ -1,8 +1,8 @@
 function GameOfLife()
 {
-	var Cells = [];
-	var this.M = 20;
-	var this.N = 20;
+	this.Cells = [];
+	this.M = 20;
+	this.N = 20;
 	for (var i = 0; i < m; i++)
 		{
 			mas[i] = [];
@@ -17,6 +17,6 @@ function GameOfLife()
 	}
 	function getCell(x,y)
 	{
-		if this.Cells[x][y] === true then return true else return false;
+		if (this.Cells[x][y] === true) then return true else return false;
 	}
 }
