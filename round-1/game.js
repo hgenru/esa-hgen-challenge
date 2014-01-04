@@ -17,6 +17,6 @@ function GameOfLife()
 	}
 	function getCell(x,y)
 	{
-		if (this.Cells[x][y] === true) then return true else return false;
+		if (this.Cells[x][y] === true) return true else return false;
 	}
 }
