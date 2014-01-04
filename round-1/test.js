@@ -1,4 +1,4 @@
-test( "Test game of life", function() {
+test("Test game of life", function() {
     // Создаем экземпляр игры
     var g = new GameOfLife();
     // Пытаемся зародить жизнь
