@@ -11,11 +11,11 @@ function GameOfLife()
 					this.Cells[i][j] = false;
 				}
 		}
-	function setCell(x,y)
+	this.setCell = function (x,y)
 	{
 		this.Cells[x][y] = true;
 	}
-	function getCell(x,y)
+	this.getCell = function (x,y)
 	{
 		if (this.Cells[x][y] === true) {return true} else {return false};
 	}
