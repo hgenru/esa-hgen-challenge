@@ -5,10 +5,10 @@ function GameOfLife()
 	this.N = 20;
 	for (var i = 0; i < this.M; i++)
 		{
-			mas[i] = [];
+			this.Cells[i] = [];
 			for (var j = 0; j < this.N; j++)
 				{
-					mas[i][j] = false;
+					this.Cells[i][j] = false;
 				}
 		}
 	function setCell(x,y)
