@@ -11,21 +11,21 @@ function GameOfLife()
 					this.Cells[i][j] = false;
 				}
 		}
-	function CheckCell(x,y)
+
+	this.CheckCell = function(x,y)
 	{
 		var t=0;
 		for (var i = x-1; i < x+1; i++)
 		{
 			for (var j = y-1; j < y+1; j++)
 				{
-					if (i!=x && j!=y) {t++}
+					if (i != x && j != y) {t++}
 				}
 		}
-		if (t === 3) {this.Cells[x][y]=true} else 
-		{
-			if ((t === 2 && this.Cells[x][y]===true)===false){this.Cells[x][y]=false}
-		}
+		console.log(this);
+		if (t === 3) {this.Cells[x][y]=true} else if (t !== 2) {this.Cells[x][y]=false}
 	}
+
 	this.setCell = function (x,y)
 	{
 		this.Cells[x][y] = true;
@@ -36,6 +36,6 @@ function GameOfLife()
 	}
 	this.nextStep = function ()
 	{
-		CheckCell(10,10)
+		this.CheckCell(0,0)
 	}
 }
