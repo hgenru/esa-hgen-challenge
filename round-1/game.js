@@ -18,24 +18,24 @@ function GameOfLife()
 		{
 			for (var j = y-1; j < y+1; j++)
 				{
-					if ((this.Cells[i][j] === true)&&(i!==x)&&(j!==y)) {t++}
+					if (i!=x && j!=y) {t++}
 				}
 		}
 		if (t === 3) {this.Cells[x][y]=true} else 
 		{
-			if (!((t === 2)&&(this.Cells[x][y]=true))) {this.Cells[x][y]=false}
+			if (t === 2 && this.Cells[x][y]===true){this.Cells[x][y]=false}
 		}
 	}
 	this.setCell = function (x,y)
 	{
 		this.Cells[x][y] = true;
 	}
-	this.setCell = function (x,y)
+	this.getCell = function (x,y)
 	{
 		if (this.Cells[x][y] === true) {return true} else {return false};
 	}
-	this.nextStep = function
+	this.nextStep = function ()
 	{
-		CheckCell(0,0)
+		CheckCell(10,10)
 	}
 }
