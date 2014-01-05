@@ -24,6 +24,7 @@ test("test next step", function() {
 });
 test("test square", function() {
     // Пытаемся зародить жизнь
+    console.log("33333333333333333333333333333333");
     this.game.setCell(0, 0);
     this.game.setCell(0, 1);
     this.game.setCell(1, 0);

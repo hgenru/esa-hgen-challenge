@@ -1,12 +1,12 @@
 function GameOfLife()
 {
 	this.Cells = [];
-	this.M = 20;
-	this.N = 20;
-	for (var i = 0; i < this.M; i++)
+	M = 4;
+	N = 4;
+	for (var i = 0; i < M; i++)
 		{
 			this.Cells[i] = [];
-			for (var j = 0; j < this.N; j++)
+			for (var j = 0; j < N; j++)
 				{
 					this.Cells[i][j] = false;
 				}
@@ -14,16 +14,31 @@ function GameOfLife()
 
 	this.CheckCell = function(x,y)
 	{
-		var t=0;
-		for (var i = x-1; i < x+1; i++)
+		function thorX(x)
 		{
-			for (var j = y-1; j < y+1; j++)
+			if (x<0) {return(x+M)}
+			if (x>=M) {return(x-M)}
+			return x
+		}
+		function thorY(y)
+		{
+			if (y<0) {return y+N}
+			if (y>=N) {return y-N}
+			return y
+		}
+
+		var t=0;
+		for (var i = x-1; i <= x+1; i++)
+		{
+			for (var j = y-1; j <= y+1; j++)
 				{
-					if (i != x && j != y) {t++}
+					//console.log(x,y,i,j,thorX(i),thorY(j),t);
+					if (this.Cells[thorX(i)][thorY(j)] === true) {t++}
 				}
 		}
-		console.log(this);
-		if (t === 3) {this.Cells[x][y]=true} else if (t !== 2) {this.Cells[x][y]=false}
+		if (this.Cells[x][y] === true) {t--}
+		//console.log(x,y,t);
+		if (t === 3) {this.Cells[thorX(x)][thorY(y)]=true} else if (t !== 2) {this.Cells[thorX(x)][thorY(y)]=false}
 	}
 
 	this.setCell = function (x,y)
@@ -36,6 +51,13 @@ function GameOfLife()
 	}
 	this.nextStep = function ()
 	{
-		this.CheckCell(0,0)
+		for (var i = 0; i < M; i++)
+		{
+			for (var j = 0; j < N; j++)
+				{
+					this.CheckCell(i,j);
+				}
+			//console.log(this.Cells[i]);
+		}
 	}
 }
