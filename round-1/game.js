@@ -23,7 +23,7 @@ function GameOfLife()
 		}
 		if (t === 3) {this.Cells[x][y]=true} else 
 		{
-			if (t === 2 && this.Cells[x][y]===true){this.Cells[x][y]=false}
+			if ((t === 2 && this.Cells[x][y]===true)===false){this.Cells[x][y]=false}
 		}
 	}
 	this.setCell = function (x,y)
