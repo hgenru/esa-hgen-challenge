@@ -41,3 +41,20 @@ test("test square", function() {
         "Оно жило и будет жить!"
     );
 });
+test("test stick", function() {
+    // Пытаемся зародить жизнь
+    this.game.setCell(0, 1);
+    this.game.setCell(0, 0);
+    this.game.setCell(0, -1);
+    // Переходим на следующий шаг
+    this.game.nextStep();
+    // Переходим еще на шаг для надежности
+    this.game.nextStep();
+    // Узнаем как поживает наша палочка
+    ok(
+        (this.game.getCell(1, 0) &&
+         this.game.getCell(0, 0) &&
+         this.game.getCell(-1, 0)),
+        "Смотрите, у Вас завелась какая-то палочка!"
+    );
+});
