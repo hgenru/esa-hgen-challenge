@@ -12,3 +12,13 @@ test("test set and get", function() {
     // Проверяем полученный статус
     ok(status === true, "Оно шевелится по всей вселенной!");
 });
+test("test cell life", function() {
+    // Пытаемся зародить жизнь
+    this.game.setCell(10, -10);
+    // Да будет свет!
+    this.game.nextStep();
+    // Узнаем как у нас клеточка поживает
+    var status = this.game.getCell(10, -10);
+    // Проверяем полученный статус
+    ok(status === false, "Оно шевелилось и умерло!");
+});
