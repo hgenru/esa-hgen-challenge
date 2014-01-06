@@ -24,16 +24,37 @@ function GameOfLife()
 
 	this.isAlive = function(x,y)
 	{
-		/*
 		var t=0;
 		for (var i=0; i<this.p; i++)
 		{
-			if ((this.Cells[i].x>x-2)&&((this.Cells[i].x<x+2)&&
-				(this.Cells[i].y>y-2)&&((this.Cells[i].y<y+2)) 
+			if ((this.Cells[i][0]>x-2)&&(this.Cells[i][0]<x+2)&&
+				(this.Cells[i][1]>y-2)&&(this.Cells[i][1]<y+2)) 
 				{
 					t++;
 				}
 		}
-		if ((t=2) || (t=3)) {return true} else {return false}; */
+		if ((t=2) || (t=3)) {return true} else {return false}; 
 	}
+
+	this.nextStep = function()
+	{
+		var nsCells = [];
+		var nsp=0;
+		for (var i=0; i<this.p; i++)
+		{
+
+			if (this.isAlive(this.Cells[i][0],this.Cells[i][1]))
+			{
+				nsCells[nsp] = this.Cells[i];
+				nsp++;
+			}
+		}		
+		this.Cells.length = 0;
+		this.p=0;
+		for (var i=0; i<nsp; i++)
+		{
+				this.Cells[i] = nsCells[i];
+		} 
+	}
+
 }
