@@ -6,9 +6,9 @@ module( "Test Game Of Life", {
 });
 test("test set and get", function() {
     // Пытаемся зародить жизнь
-    this.game.setCell(0, 0);
+    this.game.setCell(-3000, -1000);
     // Узнаем как у нас клеточка поживает
-    var status = this.game.getCell(0, 0);
+    var status = this.game.getCell(-3000, -1000);
     // Проверяем полученный статус
     ok(status === true, "Оно шевелится!");
 });
