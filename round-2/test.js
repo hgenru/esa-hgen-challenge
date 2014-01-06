@@ -22,3 +22,20 @@ test("test cell life", function() {
     // Проверяем полученный статус
     ok(status === false, "Оно шевелилось и умерло!");
 });
+test("test square", function() {
+    // Пытаемся зародить жизнь
+    this.game.setCell(0, 0);
+    this.game.setCell(0, 1);
+    this.game.setCell(1, 0);
+    this.game.setCell(1, 1);
+    // Переходим на следующий шаг
+    this.game.nextStep();
+    // Переходим еще на шаг для надежности
+    ok(
+        (this.game.getCell(0, 0) &&
+         this.game.getCell(0, 1) &&
+         this.game.getCell(1, 0) &&
+         this.game.getCell(1, 1)),
+        "Оно жило и будет жить!"
+    );
+});
