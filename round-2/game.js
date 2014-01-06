@@ -11,9 +11,10 @@ function GameOfLife()
 
 	this.getCell = function(x,y)
 	{
-		
+		//console.log(x,y);
 		for (var i=0; i<this.p; i++)
 		{
+			//console.log(this.Cells[i][0],this.Cells[i][1]);
 			if ((this.Cells[i][0]===x)&&(this.Cells[i][1]===y)) 
 				{
 					return true;
@@ -50,10 +51,11 @@ function GameOfLife()
 			}
 		}		
 		this.Cells.length = 0;
-		this.p=0;
+		this.p=nsp;
 		for (var i=0; i<nsp; i++)
 		{
 				this.Cells[i] = nsCells[i];
+				//console.log(this.Cells[i][0],this.Cells[i][1],this.getCell(this.Cells[i][0],this.Cells[i][1]));
 		} 
 	}
 

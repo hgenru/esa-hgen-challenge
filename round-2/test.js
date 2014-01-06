@@ -38,6 +38,7 @@ test("test square", function() {
          this.game.getCell(1, 1)),
         "Оно жило и будет жить!"
     );
+<<<<<<< HEAD
 });
 test("test stick", function() {
     // Пытаемся зародить жизнь
@@ -62,4 +63,6 @@ test("test stick", function() {
          this.game.getCell(-1, 0)) == false,
         "Да она еще и люто бешенно вертится!"
     );
+=======
+>>>>>>> 0fe56cb65848ff0851ef470593c3b4e4ee5f61d9
 });
