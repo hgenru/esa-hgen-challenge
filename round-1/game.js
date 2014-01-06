@@ -14,14 +14,14 @@ function GameOfLife()
 		}
 	function thorX(x)
 		{
-			if (x<0) {return(x+M)}
-			if (x>=M) {return(x-M)}
+			while (x<0) {x=x+M}
+			while (x>=M) {x=x-M}
 			return x
 		}
 	function thorY(y)
 		{
-			if (y<0) {return y+N}
-			if (y>=N) {return y-N}
+			while (y<0) {y=y+N}
+			while (y>=M) {y=y-N}
 			return y
 		}
 	this.CheckCell = function(x,y)
